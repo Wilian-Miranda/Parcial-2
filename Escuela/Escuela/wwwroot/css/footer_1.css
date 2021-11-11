@@ -1,0 +1,68 @@
+﻿:root {
+    --titulo: #111c34;
+    --subtitulo: #02084b;
+    --fondo: #dae1e7;
+    --fondoTitulo: #237bac;
+    --lineas: #237bac;
+    --dobles: #182c70;
+}
+
+
+
+/*==================================
+@media (min-width:1200px) {
+    .caja {
+        display: flex;
+        flex-direction: column;
+        border: 0px solid white;
+        margin: 3em !important;
+    }
+    .marca_footer{
+        margin: 70% 1em 0 0 !important;
+    }
+}
+@media (max-width:768px) {
+
+    .contenedor{
+        flex-direction:column !important;
+        align-items:center;
+        
+    }
+    .caja{
+        width:max-content;
+        border: 0px solid yellow !important;
+        margin-bottom:1.5em;
+    }
+    .marca_footer {
+        display: flex;
+        writing-mode: horizontal-tb !important;
+        transform: rotate(0deg) !important;
+        font-weight: bolder;
+        margin: 0 0 2em 0 !important;
+    }
+    .marca_footer_2 {
+        margin:1em 0 0 0;
+    }
+}
+/*
+@media screen and (max-width:990px) {
+    .container-fluid {
+        flex-direction: row !important;
+    }
+
+    .navbar-collapse {
+        border: 2px solid var(--titulo);
+        border-radius: 14px;
+        padding-top: 0.5em;
+        padding-left: 2em;
+        padding-right: 2em;
+        padding-bottom: 2em;
+        margin-top: 1em;
+    }
+
+    .form-control {
+        margin-right: 0.5em;
+    }
+}
+*/
+

@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<style type="text/css">
+    body{
+        font-size:16px;
+    }
+    .contenedor_home {
+        margin-left: auto;
+        margin-right: auto;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content:space-around;
+        border: 1px solid gainsboro;
+        border-radius: 15px;
+        margin-top: 3em;
+        width: 70%;
+        padding: 1.5em;
+    }
+    .cajas{
+        display:flex;
+        flex-direction:column;
+        margin:2em !important;
+    }
+    .link {
+        margin-top: 1em;
+    }
+</style>
+
+<div class="contenedor_home">
+    <div class="cajas">
+        <img src="~/img/student3_118006.png" alt="" style="width: 9.375em; height: 9.375em;"/>
+        <a asp-action="Details" asp-controller="Student" class="btn btn-success link">Students</a>
+    </div>
+
+    <div class="cajas">
+        <img src="~/img/student3_118006.png" alt="" style="width: 9.375em; height: 9.375em;" />
+        <a asp-action="Details" asp-controller="Course" class="btn btn-success link">Courses</a>
+    </div>
+
+    <div class="cajas">
+        <img src="~/img/student3_118006.png" alt="" style="width: 9.375em; height: 9.375em;" />
+        <a asp-action="Details" asp-controller="Enrollment" class="btn btn-success link">Enrollments</a>
+    </div>
+</div>

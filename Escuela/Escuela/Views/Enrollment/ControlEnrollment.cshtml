@@ -1,0 +1,39 @@
+﻿@model Escuela.Models.ViewModels.Tbl_EnrollmentViewModel
+@{
+    ViewBag.Title = "ControlEnrollment";
+}
+
+<div class="container-fluid form-group" style="width: max-content; padding: 2em 1em; margin-top: 2em; border: 1px solid gray; border-radius: 14px; background-color: white; width: 30%;">
+    @using (Html.BeginForm("ControlEnrollment", "Enrollment", FormMethod.Post))
+    {
+        <h4>ENROLL STUDENTS</h4> <br />
+
+
+        if (@ViewBag.id == 0)
+        {
+            <label asp-for="enrollmentId" hidden></label>
+            <input asp-for="enrollmentId" type="number" class="form-control" value="0" hidden readonly/> <br />
+        }
+        else
+        {
+            <label asp-for="enrollmentId"></label><br />
+            <input asp-for="enrollmentId" type="number" class="form-control" value="@Model.enrollmentId" readonly/> <br /><br />
+        }
+        @Html.LabelFor(n => n.studentId)<br />
+        @Html.DropDownListFor(n => n.studentId, new SelectList(ViewBag.Students, "Value", "Text"), "Select a Student", new { @class = "form-control" })
+        @Html.ValidationMessageFor(n => n.studentId) <br /><br />
+
+
+        @Html.LabelFor(n => n.courseId)<br />
+        @Html.DropDownListFor(n => n.courseId, new SelectList(ViewBag.Courses, "Value", "Text"), "Select a Course", new { @class = "form-control" })
+        @Html.ValidationMessageFor(n => n.courseId) <br /><br />
+
+        @Html.LabelFor(n => n.grade)<br />
+        @Html.DropDownListFor(n => n.grade, new SelectList(ViewBag.Grades, "Value", "Text"), "Select a Grade", new { @class = "form-control" })
+        @Html.ValidationMessageFor(n => n.grade) <br /><br />
+
+
+
+        <input type="submit" name="name" value="Guardar" class="btn btn-outline-success" style="width:100%;" />
+    }
+</div>

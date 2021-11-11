@@ -1,0 +1,119 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<head>
+    <link href="~/css/principal-pelicula_poster_2.css" rel="stylesheet" />
+
+
+    <style type="text/css">
+        /*Estableciendo que colores se van a utilizar*/
+        :root {
+            --titulo: #111c34;
+            --subtitulo: #02084b;
+            --fondo: #dae1e7;
+            --fondoTitulo: #237bac;
+            --lineas: #237bac;
+            --dobles: #182c70;
+        }
+
+        /*para el degradado de la pelicula principal*/
+        .contenedor_item {
+            font-size: 16px;
+            width: 100% !important;
+            height: min-content;
+            border: 0px solid red;
+            background-image: url(../../wwwroot/img/dune.jpg) !important;
+        }
+
+
+        .lista {
+            display: inline-block;
+            margin: 1em;
+        }
+
+        .lista_1 {
+            margin: 1em;
+            border: 1px solid var(--fondo) !important;
+            border-radius: 7px;
+        }
+        /*=======================*/
+        .contenedor_PP {
+            border: 2px solid yellow;
+            color: var(--fondo);
+           /* margin-bottom: 6.25em;*/
+        }
+        .contenedor_PP .titulo_PP{
+            font-weight: 600;
+            font-size:3.12em;
+            margin-bottom:0.4em;
+
+        }
+        .contenedor_PP .descripcion_PP{
+            font-weight: normal;
+            font-size:1em;
+            line-height:1.75em;
+            max-width:50%;
+            margin-bottom:1.25em; 
+        }
+            .contenedor_PP .boton {
+                background: rgba(0,0,0,0.5);
+                border: none;
+                border-radius: 0.31em;
+                padding: 0.93em 1.87em;
+                color: var(--fondo);
+                margin-right: 1.25em;
+                cursor: pointer;
+                transition: 0.3s ease all;
+                font-size: 1.12em;
+                font-weight:bold;
+            }
+        .contenedor_PP .boton:hover{
+            background: var(--fondo);
+            color:var(--titulo);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="contenedor_item">
+    <img class="img-pelicula-principal" src="~/img/dune.jpg" />
+        <div class="contenedor_PP">
+            <h3 class="titulo_PP">Dune</h3>
+            <p class="descripcion_PP">
+                hwdgiyefgiwey fuyefuye iauyefgo EY OEY FOUEY FOUUEY FEYG F UYSG shrkuusgr ugrkr hr
+                r ury suyrgk srgk srg ksrgk shrgksrk hgrkh gkrh krlrg srg   jhsgri srg r rer uur ay frufy grgo r
+                r r gowur gowru oweurg wiierrowueoweeru wur ouwrg ouurgowu rro uwro y r weeur owreu owru owrutyq084 4ruu
+            </p>
+            <button type="button" role="button" class="boton">Rentar</button>
+            <button type="button" role="button" class="boton">Agregar al Carrito</button>
+        </div>
+
+    </div>
+
+
+    <div class="lista_1">
+        <figure class="lista">
+            <img src="~/img/dune.jpg" width="160" height="242" />
+        </figure>
+        <figure class="lista">
+            <img src="~/img/dune.jpg" width="160" height="242" />
+        </figure>
+        <figure class="lista">
+            <img src="~/img/dune.jpg" width="160" height="242" />
+        </figure>
+        <figure class="lista">
+            <img src="~/img/dune.jpg" width="160" height="242" />
+        </figure>
+        <figure class="lista">
+            <img src="~/img/dune.jpg" width="160" height="242" />
+        </figure>
+
+    </div>
+
+    </div>
+    @*<h1 class="display-4">Welcome</h1>
+        <p>
+            Learn about
+            <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.
+        </p>*@
+</body>

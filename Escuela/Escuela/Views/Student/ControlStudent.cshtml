@@ -1,0 +1,44 @@
+﻿@model Escuela.Models.ViewModels.Tbl_StudentViewModel
+@{
+    ViewBag.Title = "ControlStudent";
+}
+
+<div class="container-fluid form-group" style="width:max-content; padding:2em 1em;margin-top:2em;border:1px solid gray; border-radius:14px; background-color:white;">
+    @using (Html.BeginForm("ControlStudent", "Student", FormMethod.Post))
+    {
+        <h4>REGISTRO DE ESTUDIANTES</h4> <br />
+
+        if (@ViewBag.id == 0)
+        {
+            <label asp-for="studendId" hidden></label>
+            <input asp-for="studendId" type="number" class="form-control" value="0" hidden readonly/><br />
+        }
+        else
+        {
+            <label asp-for="studendId"></label><br />
+            <input asp-for="studendId" type="number" class="form-control" value="@Model.studendId" readonly/> <br /><br />
+        }
+
+
+        @Html.LabelFor(n => n.lastName)<br />
+        @Html.TextBoxFor(n => n.lastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(n => n.lastName) <br /><br />
+
+        @Html.LabelFor(e => e.firstMidName)<br />
+        @Html.TextBoxFor(e => e.firstMidName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(e => e.firstMidName) <br /><br />
+
+        @Html.LabelFor(s => s.enrollmentsDate)<br />
+        if (@ViewBag.id == 0)
+        {
+            @Html.TextBoxFor(s => s.enrollmentsDate, new { type = "date", @class = "form-control" })
+        }
+        else
+        {
+            @Html.TextBoxFor(s => s.enrollmentsDate, new { type = "datetime", @class = "form-control" })
+        }
+        @Html.ValidationMessageFor(s => s.enrollmentsDate) <br /><br />
+
+        <input type="submit" name="name" value="Guardar" class="btn btn-outline-success" style="width:100%;" />
+    }
+</div>

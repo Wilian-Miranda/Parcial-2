@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Escuela</title>
+
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://kit.fontawesome.com/fab0b1407d.js" crossorigin="anonymous"></script>
+
+    <link href="~/css/menu_1.css" rel="stylesheet" />
+
+    <style type="text/css">
+        :root {
+            --titulo: #111c34;
+            --subtitulo: #02084b;
+            --fondo: #dae1e7;
+            --fondoTitulo: #237bac;
+            --lineas: #237bac;
+            --dobles: #182c70;
+        }
+        .pie_page {
+            position: absolute;
+            color: white;
+            background-color: black;
+            display: flex;
+            justify-items: center;
+            justify-content: center;
+            border: 0px solid red;
+            margin: 0 0 0 0 !important;
+            padding: 1.5em;
+            bottom: 0 !important;
+            width: 100%;
+        }
+        .cont {
+            text-align: center;
+        }
+        /*
+        .marca_footer {
+            display:flex;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+            font-weight: bolder;
+            margin: 30% 1.5em 0 0;
+        }
+
+        .marca_footer_2 {
+            font-weight: bolder;
+        }
+
+
+
+        .linea_footer {
+            position: relative;
+            left: 10%;
+            border: 2px solid #dae1e7;
+            width: 80%;
+            margin-bottom: 1em;
+        }
+
+        .titulo_caja {
+            font-weight: bold;
+        }
+
+        
+        .contenedor {
+            display: flex;
+            justify-items: center;
+            justify-content: center;
+            border: 0px solid yellow;
+            flex-direction: row;
+        }
+        .caja {
+            display: inline-block;
+            flex-direction: column;
+            border: 0px solid white;
+            margin-right: 2em;
+        }
+
+        .caja_4 {
+            width: min-content;
+        }*/
+
+    </style>
+</head>
+<body>
+    <header class=""><!--navbar-toggleable-sm-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid" style="width:100%;">
+                <figure class="menu-logo">
+                    <a class="menu-link-logo" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img class="wow menu-img-logo animate__animated animate__pulse" data-wow-offset="10" data-wow-iteration="10" data-wow-duration="2s" src="~/img/estudiantes.png" style="width:100px; height: 90px;" alt="logo" />
+                    </a>
+                </figure>
+                <button class="navbar-toggler boton-menu" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-xl-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item dropdown">
+                            <!--<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>-->
+                            <button class="dropdown-toggle menu-botones" id="dropdownMenuButton" data-toggle="dropdown">
+                                Student
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" asp-controller="Student" asp-action="Details">Details</a>
+                                <a class="dropdown-item" asp-controller="Student" asp-action="ControlStudent">Add new Student</a>
+                            </div>
+                        </li>
+                        <!--=====================================================================================================-->
+                        <li class="nav-item dropdown">
+                            <!--<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>-->
+                            <button class="dropdown-toggle menu-botones" id="dropdownMenuButton" data-toggle="dropdown">
+                                Course
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" asp-controller="Course" asp-action="Details">Courses</a>
+                                <a class="dropdown-item" asp-controller="Course" asp-action="ControlCourse">Add new Course</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <!--<a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>-->
+                            <button class="dropdown-toggle menu-botones" id="dropdownMenuButton" data-toggle="dropdown">
+                                Enroll Students
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" asp-controller="Enrollment" asp-action="Details">Enrolled Students</a>
+                                <a class="dropdown-item" asp-controller="Enrollment" asp-action="ControlEnrollment">New enroll</a>
+                                <a class="dropdown-item" asp-controller="Student" asp-action="Details">New from Students</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn my-2 my-sm-0 btn-buscar" type="submit">Buscar</button>
+                    </form>
+                    <button type="button" class="btn-login btn">Iniciar</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="pie_page">
+        <div class="">
+            <div class="cont">
+                &copy; 2021 - Students - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            </div>
+
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <script type="text/javascript" src="https://cdn.boomcdn.com/libs/wow-js/1.3.0/wow.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <script src="https://kit.fontawesome.com/8c7710e876.js" crossorigin="anonymous"></script>
+</body>
+</html>

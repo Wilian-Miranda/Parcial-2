@@ -1,0 +1,79 @@
+﻿@model List<Escuela.Dominio.Tbl_Enrollment>
+@{
+    ViewData["Title"] = "Enrollment";
+}
+<style type="text/css">
+    .contenedor {
+        margin-top: 3em;
+        padding: 1.5em 1em;
+        border: 1px solid gainsboro;
+        border-radius: 15px;
+        margin-left: auto;
+        margin-right: auto;
+        top: 3em;
+        bottom: 3em;
+        margin-bottom:3em;
+        flex-direction: column;
+
+    }
+
+    .btn-success {
+        width: max-content !important;
+        float: right;
+    }
+
+    h3 {
+        position: initial;
+        text-align: center;
+    }
+
+    button a {
+        color: white;
+        height: 30px !important;
+    }
+</style>
+<div class="container contenedor">
+    <h3>Control de Matriculas</h3>
+    <div>
+        <button class="btn btn-success" type="button" style="float:right;">
+            @Html.ActionLink("Agregar", "ControlEnrollment", "Enrollment", new { interruptor = 0 })
+        </button>
+    </div>
+    <table id="TableEnrollment" class="table table-striped">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>LAST NAME</th>
+                <th>TITLE</th>
+                <th>GRADE</th>
+                <th style="text-align:center;">ACTION</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var i in Model)
+            {
+            <tr>
+                <th>@i.enrollmentId</th>
+                <th>@i.Student.firstMidName</th>
+                <th>@i.Student.lastName</th>
+                <th>@i.Course.title</th>
+                <th>@i.grade</th>
+                <th style="text-align:center;">
+                    <button class="btn btn-warning" type="button">@Html.ActionLink("Actualizar", "ControlEnrollment", "Enrollment", new { id = i.enrollmentId, interruptor = 1 })</button>
+                    <button class="btn btn-danger" type="button">@Html.ActionLink("Eliminar", "DeleteEnrollment", "Enrollment", new { id = i.enrollmentId })</button>
+                </th>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+@section scripts{
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            var tabla = $('#TableEnrollment').DataTable();
+        })
+    </script>
+}
+
